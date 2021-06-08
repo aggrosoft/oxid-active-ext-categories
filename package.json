@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "release": "dotenv release-it -VV",
-    "test-release": "release-it --dry-run"
+    "test-release": "dotenv release-it --dry-run"
   },
   "devDependencies": {
     "@release-it/bumper": "^1.4.1",
