@@ -1,0 +1,44 @@
+{
+  "name": "oxid-active-ext-categories",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "release": "dotenv release-it -VV",
+    "test-release": "release-it --dry-run"
+  },
+  "devDependencies": {
+    "@release-it/bumper": "^1.4.1",
+    "auto-changelog": "^2.2.1",
+    "dotenv-cli": "^3.2.0",
+    "node-sass": "^4.14.1",
+    "release-it": "^13.7.1"
+  },
+  "release-it": {
+    "github": {
+      "release": true
+    },
+    "npm": {
+      "publish": false
+    },
+    "hooks": {
+      "after:bump": "npx auto-changelog -p",
+      "after:release": [
+        "echo Successfully released ${name} v${version} to ${repo.repository}."
+      ]
+    },
+    "plugins": {
+      "@release-it/bumper": {
+        "out": [
+          {
+            "file": "metadata.php",
+            "type": "text/php"
+          },
+          {
+            "file": "composer.json",
+            "type": "application/json"
+          }
+        ]
+      }
+    }
+  }
+}

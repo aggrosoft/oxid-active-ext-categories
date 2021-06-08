@@ -1,0 +1,26 @@
+{
+  "name": "aggrosoft/oxid-active-ext-categories",
+  "type": "oxideshop-module",
+  "description": "Active External Categories",
+  "license": "MIT",
+  "require": {
+    "php": ">=7.1"
+  },
+  "authors": [
+    {
+      "name": "Alexander Kludt",
+      "homepage": "https://github.com/aggrosoft"
+    }
+  ],
+  "extra": {
+    "oxideshop": {
+      "target-directory": "agactiveextcategories"
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "Aggrosoft\\ActiveExternalCategories\\": "../../../source/modules/agactiveextcategories"
+    }
+  },
+  "version": "1.2.2"
+}
