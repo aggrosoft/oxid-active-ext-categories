@@ -16,10 +16,13 @@ class CategoriesComponent extends CategoriesComponent_parent {
         if ($uri) {
             $oDb = \OxidEsales\Eshop\Core\DatabaseProvider::getDb();
             $sSelect = 'SELECT oxid FROM oxcategories WHERE oxextlink = :oxextlink AND oxshopid = :oxshopid';
-            $sActCat = $oDb->getOne($sSelect, [
+            $sExtCat = $oDb->getOne($sSelect, [
                 'oxextlink' => $uri,
                 'oxshopid' => Registry::getConfig()->getShopId()
             ]);
+            if ($sExtCat) {
+                $sActCat = $sExtCat;
+            }
         }
       }
 
