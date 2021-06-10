@@ -2,6 +2,8 @@
 
 namespace Aggrosoft\ActiveExternalCategories\Application\Component;
 
+use OxidEsales\Eshop\Core\Registry;
+
 class CategoriesComponent extends CategoriesComponent_parent {
 
     protected function _getActCat() // phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
